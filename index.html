@@ -1,70 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Animal Crossing: New Leaf Save Editor</title>
-	<link rel="shortcut icon" href="./resources/favicon.png"/>
-	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
-	<meta name="description" content="An Animal Crossing: New Leaf savegame editor. It lets you edit your town, items, villagers and more!"/>
-	<meta name="keywords" content="animal, crossing, new, leaf, save, editor, ram, town, pockets, items, hack, exploit"/>
-	<link type="text/css" rel="stylesheet" href="./resources/acnl_editor.css" media="all"/>
-	<script type="text/javascript" src="./js/checksum.js"></script>
-	<script type="text/javascript" src="./js/patterns.js"></script>
-	<script type="text/javascript" src="./js/data_types.js"></script>
-	<script type="text/javascript" src="./js/items.js"></script>
-	<script type="text/javascript" src="./js/buildings.js"></script>
-	<script type="text/javascript" src="./js/villagers.js"></script>
-	<script type="text/javascript" src="./js/libraries.js"></script>
-	<script type="text/javascript" src="./js/editor_garden.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Crossing: New Leaf Save Editor</title>
+    <link rel="shortcut icon" href="./resources/favicon.png"/>
+    <meta name="description" content="An Animal Crossing: New Leaf savegame editor. It lets you edit your town, items, villagers and more!"/>
+    <meta name="keywords" content="animal, crossing, new, leaf, save, editor, ram, town, pockets, items, hack, exploit"/>
+    <link type="text/css" rel="stylesheet" href="./resources/acnl_editor.css" media="all"/>
 </head>
 <body>
 
-
 <div id="home">
-	<div class="title">
-		<span class="logo"></span>
-		<h1>Animal Crossing: New Leaf Save Editor</h1>
-		<div class="author">
-			by <a href="http://www.marcrobledo.com" target="_blank">Marc Robledo</a> <span class="last-update">(last updated on 23th Apr 2020)</span>
-			forked by Paprotk and made more mobile friendly
-		</div>
+    <div class="title">
+        <span class="logo"></span>
+        <h1>Animal Crossing: New Leaf Save Editor</h1>
+        <div class="author">
+            by <a href="http://www.marcrobledo.com" target="_blank">Marc Robledo</a> <span class="last-update">(last updated on 23th Apr 2020)</span>
+            forked by Paprotk and made more mobile friendly
+        </div>
+        <div id="help">
+            <a href="help.html" target="_blank">About</a> | 
+            <a href="help.html#Homebrew" target="_blank">How to</a> | 
+            <a href="https://github.com/marcrobledo/acnl-editor/releases">Download</a> | 
+            <a href="help.html#FAQ" target="_blank">FAQ</a>
+        </div>
+    </div>
 
-		<div id="help">
-			<a href="help.html" target="_blank">About</a> | 
-			<a href="help.html#Homebrew" target="_blank">How to</a> | 
-			<a href="https://github.com/marcrobledo/acnl-editor/releases">Download</a> | 
-			<a href="help.html#FAQ" target="_blank">FAQ</a>
-		</div>
-	</div>
+    <div id="blocks">
+        <div id="contribute"><a href="https://www.paypal.me/marcrobledo" target="_blank" rel="nofollow"><span>Feel free to contribute by making a donation!</span><span class="donate"><span class="sprite heart"></span> Donate</span></a></div>
 
-	<div id="blocks">
-		<div id="contribute"><a href="https://www.paypal.me/marcrobledo" target="_blank" rel="nofollow"><span>Feel free to contribute by making a donation!</span><span class="donate"><span class="sprite heart"></span> Donate</span></a></div>
+        <div class="block block-warning center open" id="block-warning">
+            Use this tool at your own risk.<br/>
+            By using it, you are responsible of any data lost.
+        </div>
 
-		<div class="block block-warning center open" id="block-warning">
-			Use this tool at your own risk.<br/>
-			By using it, you are responsible of any data lost.
-		</div>
-
-		<div class="block">
-			<label for="lang-selector">Select item language:</label> <span id="lang-flag" class="sprite flag flag-en"></span>
-			<select onchange="setCookie('lang',this.selectedIndex); updateLangIcon(this.selectedIndex)" id="lang-selector">
-				<option value="0" selected="selected">English</option>
-				<option value="enu">English (UK)</option>
-				<option value="fr">Français</option>
-				<option value="de">Deutsch</option>
-				<option value="it">Italiano</option>
-				<option value="es">Español</option>
-				<option value="jp">Japanese</option>
-				<option value="kr">Korean</option>
-			</select>
-
-			<hr/>
-			<span id="loading">Loading editor, please wait...</span>
-			<form id="loadform" style="display:none">
-				Open your <u>garden.dat</u> or <u>garden_plus.dat</u> file here:<br/>
-				<input type="file" accept=".dat" onchange="loadSavegameFromFile(this.files[0])"/>
-			</form>
-		</div>
-	</div>
+        <div class="block">
+            <label for="lang-selector">Select item language:</label> <span id="lang-flag" class="sprite flag flag-en"></span>
+            <select onchange="setCookie('lang',this.selectedIndex); updateLangIcon(this.selectedIndex)" id="lang-selector">
+                <option value="0" selected="selected">English</option>
+                <option value="enu">English (UK)</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="jp">Japanese</option>
+                <option value="kr">Korean</option>
+            </select>
+            <hr/>
+            <span id="loading">Loading editor, please wait...</span>
+            <form id="loadform" style="display:none">
+                Open your <u>garden.dat</u> or <u>garden_plus.dat</u> file here:<br/>
+                <input type="file" accept=".dat" onchange="loadSavegameFromFile(this.files[0])"/>
+            </form>
+        </div>
+    </div>
 </div>
 
 
